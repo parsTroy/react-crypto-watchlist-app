@@ -11,6 +11,7 @@ const CoinItem = ({coin}) => {
     const { user } = UserAuth();
 
     const coinPath = doc(db, 'users', `${user?.email}`);
+
     const saveCoin = async () => {
         if (user?.email) {
             setSavedCoin(true);
@@ -26,7 +27,7 @@ const CoinItem = ({coin}) => {
         } else {
             alert('Please sign in to save a coin to your watchlist!')
         }
-    }
+    };
 
   return (
     <tr className='h-[80px] border-b overflow-hidden'>
